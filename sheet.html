@@ -602,23 +602,190 @@ grid-template-columns: repeat(5, auto);    gap:12px;
 }
 /* ===== PRINT: force ONE PAGE (landscape) ===== */
 @media print{
-    @page { size: A4 landscape; margin: 8mm; }
-    body{background:#fff;color:#000}
-    .wrap{padding:0;max-width:none}
-    .card{box-shadow:none;background:#fff;border:1px solid #ccc}
-    .btn{display:none!important}
-    .actions .pill{display:inline-flex!important;border:1px solid #ddd;background:#f5f5f5;color:#111}
-    input,textarea,select{border:1px solid #999;background:#fff;color:#000}
-    .grid{grid-template-columns: 1.55fr 1fr; gap:10px}
-    .paper,.insights,.controls,.topbar{padding:10px}
-    .rowBox{margin-bottom:8px;padding:8px}
-    table{border-spacing:0 8px}
-    .kpi .val{font-size:22px}
-    .insTitle{font-size:18px}
-    .notes textarea{min-height:80px}
-    .rowBox, .kpi, .callout, .bigBox, .totalBar{break-inside: avoid; page-break-inside: avoid;}
-    *{print-color-adjust:exact; -webkit-print-color-adjust:exact;}
+
+  @page{
+    size:A4 landscape;
+    margin:4mm;
   }
+
+  body{
+    zoom:.68 !important;
+    background:#fff !important;
+  }
+
+  .floatingQR,
+  .vaultWrap,
+  .controls,
+  .notes,
+  .topbar .btn{
+    display:none !important;
+  }
+
+  .topbar{
+    min-height:50px !important;
+    margin-bottom:4px !important;
+    padding:6px 10px !important;
+  }
+
+  .brand img{
+    height:18px !important;
+  }
+
+  .brand .t{
+    font-size:10px !important;
+  }
+
+  .brand .s{
+    font-size:8px !important;
+  }
+
+  .pill{
+    padding:3px 8px !important;
+    font-size:8px !important;
+  }
+
+  .grid{
+    grid-template-columns:70% 30% !important;
+    gap:4px !important;
+  }
+
+  .paper,
+  .insights{
+    padding:6px !important;
+    border-radius:6px !important;
+  }
+
+  .paperTitle{
+    margin-bottom:2px !important;
+  }
+
+  .paperTitle .h{
+    font-size:11px !important;
+  }
+
+  .paperTitle .sub{
+    font-size:8px !important;
+  }
+
+  .rule{
+    margin:2px 0 4px !important;
+  }
+
+  th{
+    font-size:8px !important;
+    padding:0 2px 2px !important;
+  }
+
+  .rowBox{
+    padding:2px !important;
+    margin-bottom:2px !important;
+  }
+
+  .cellGrid{
+    grid-template-columns:
+    90px
+    55px
+    55px
+    60px
+    55px !important;
+
+    gap:2px !important;
+  }
+
+  input,
+  select,
+  textarea{
+    font-size:8px !important;
+    padding:0 !important;
+  }
+
+  .pct{
+    font-size:8px !important;
+    padding:1px 3px !important;
+  }
+
+  .totalBar{
+    padding:4px !important;
+    margin-top:2px !important;
+  }
+
+  .totalBar .big{
+    font-size:10px !important;
+  }
+
+  .totalBar .muted{
+    font-size:8px !important;
+  }
+
+  .insTitle{
+    font-size:12px !important;
+    margin-bottom:4px !important;
+  }
+
+  .kpiGrid{
+    gap:4px !important;
+  }
+
+  .kpi{
+    padding:4px !important;
+  }
+
+  .kpi .lab{
+    font-size:7px !important;
+  }
+
+  .kpi .val{
+    font-size:10px !important;
+  }
+
+  .kpi .hint{
+    font-size:7px !important;
+  }
+
+  .callout{
+    padding:3px !important;
+    margin-top:4px !important;
+  }
+
+  .callout .miniGrid{
+    gap:2px !important;
+  }
+
+  .callout .miniItem{
+    padding:2px !important;
+  }
+
+  .callout .miniIcon{
+    width:14px !important;
+    height:14px !important;
+    font-size:8px !important;
+  }
+
+  .miniText{
+    font-size:7px !important;
+    line-height:1.05 !important;
+  }
+
+  .bigBox{
+    margin-top:4px !important;
+    padding:3px !important;
+  }
+
+  .summaryLines{
+    gap:2px !important;
+  }
+
+  .summaryLines .row{
+    padding:2px !important;
+    font-size:7px !important;
+  }
+
+  *{
+    box-shadow:none !important;
+    backdrop-filter:none !important;
+    page-break-inside:avoid !important;
+  }
+}
 </style>
 </head>
 
@@ -633,7 +800,7 @@ grid-template-columns: repeat(5, auto);    gap:12px;
   <div class="card">
     <div class="topbar">
       <div class="brand">
-<img src="./fossil-logo.png" alt="Fossil" />
+<img src="./fossil-logo.PNG" alt="Fossil" />
         <div>
           <div class="t">FOSSIL 5976</div>
           <div class="s">Weekly Sheet • Week Selector (Auto-Save) • Auto Date Sync • Quick Entry</div>
